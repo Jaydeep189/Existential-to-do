@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href='../static/styles.css'>
+    <title>Existential Todo App</title>
+</head>
+<body>
+    <div class="main">
+        <h1>Existential Todo List</h1>
+        <form action="/" method="post">
+              {% csrf_token %}
+            <input type="text" name='task' id='task' required> 
+            <button id="add" type="submit" onclick="Question_section()"> + </button>
+        </form>
+        <ul>
+             {% for todo in task %}
+             <li>{{todo.todo}}</li><hr> <form method="post" action="/" > <button class="favicon"> <i class="fas fa-trash"></i> </button></form>
+             {%endfor%}
+        </ul>
+    </div>
+    <div class="question-box">
+        <div class="content">
+            <h2>Existential Question - 1</h2>
+            <div class='close'>
+                <h3>+</h3>
+            </div>
+            
+            {% for q in question %}
+                <h3>{{q.question}}</h3> 
+            {% endfor %}
+        </div>
+    </div>
+    <script src="../static/index.js"></script>
+</body>
+</html>
