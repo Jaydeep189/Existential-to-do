@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% endblock content %}
+
+{% block contact %}
+<div class="label-7"> </div>
+	<div class="label-8"> </div>
+	<h3><span class="left-icon"> </span>CONTACT<span class="right-icon"> </span>
+		<div class="clearfix"> </div>
+	</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+	<div class="conatct-form">
+		<ul class="form">
+			<li>
+				<input type="text" class="text" value="Name*" onfocus="this.value = '';"
+					onblur="if (this.value == '') {this.value = 'Name*';}">
+			</li>
+			<li>
+				<input type="text" class="text" value="Email*" onfocus="this.value = '';"
+					onblur="if (this.value == '') {this.value = 'Email*';}">
+			</li>
+			<li>
+				<textarea value="Message*:" onfocus="this.value = '';"
+					onblur="if (this.value == '') {this.value = 'Your Message*';}">Message*</textarea>
+			</li>
+			<div class="sub-button">
+				<input type="submit" value="SEND">
+			</div>
+		</ul>
+	</div>
+{% endblock contact %}
+

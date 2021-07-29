@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Existential To-Do List</title>
+	<link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+	<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Emrah_Demirag Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<script src="js/jquery.min.js"> </script>
+	<!--web_fonts-->
+	<link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,700italic,400,700' rel='stylesheet'
+		type='text/css'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!--/web_fonts-->
+	<!--start-smoth-scrolling-->
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 900);
+			});
+		});
+	</script>
+	<!--start-smoth-scrolling-->
+</head>
+<div id="home" class="banner">
+	<div class="container">
+		<div class="label-1"> </div>
+		<div class="top-menu">
+		<span class="menu"> </span> 
+			<ul class="nav">
+					<li><a class="scroll" href="/">HOME</a></li>
+					<li><a class="scroll" href="/about">ABOUT</a></li>
+					<li><a class="scroll" href="/login">LOGIN</a></li>
+					<li><a class="scroll" href="/contact">CONTACT</a></li>
+				</ul>
+				<div class="logo">
+					<a href="#"><img src="{% static 'images/logo.png' %}" /></a>
+				</div>
+				<div class="clearfix"> </div>
+	</div>	
+			 <!-- script-for-menu -->
+		 <script>
+				$("span.menu").click(function(){
+					$(".top-menu ul").slideToggle("slow" , function(){
+					});
+				});
+		 </script>
+		 <!-- script-for-menu -->	
+			<div id="banner-top" class="banner-top">		  		  
+				<h1><span class="left-icon"> </span>EXISTENTIAL <span class="right-icon"> </span><div class="clearfix"> </div></h1>
+				<h2><span class="left-icon"> </span>TO-DO LIST<span class="right-icon"> </span><div class="clearfix"> </div></h2>
+			</div>
+		<div class="header-icons">
+			<a href="#"><span class="fb"> </span></a>
+			<a href="#"><span class="tw"> </span></a>
+			<a href="#"><span class="pin"> </span></a>	
+			<a href="#"><span class="likdin"> </span></a>	
+			<a href="#"><span class="dribble"> </span></a>	 
+			<a href="#"><span class="be"> </span></a>
+		 </div>
+</div>
+</div>
+{% block content %}
+
+{% endblock content %}
+<div class="container">
+<div id="contact" class="contact">
+	{% block contact %}
+	{% endblock contact %}
+	<div class="copyrights">
+		<p>Copyrights &copy; 2021 Existential All rights reserved | Created by <a target="_blank"
+				rel="noopener noreferrer" href="http://jaydeepsharma.co">Jaydeep Sharma</a></p>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+
+		});
+	</script>
+	<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;">
+		</span></a>
+</div>
+</div>
+<!--/contact-->
+<!--copy-rights-->
+
+<!--copy-rights-->
+</body>
+
+</html>

@@ -1,39 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link rel="stylesheet" href='../static/styles.css'>
-    <title>Existential Todo App</title>
-</head>
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
 <body>
-    <div class="main">
-        <h1>Existential Todo List</h1>
-        <form action="/" method="post">
-              {% csrf_token %}
-            <input type="text" name='task' id='task' required> 
-            <button id="add" type="submit" onclick="Question_section()"> + </button>
-        </form>
-        <ul>
-             {% for todo in task %}
-             <li>{{todo.todo}}</li><hr> <form method="post" action="/" > <button class="favicon"> <i class="fas fa-trash"></i> </button></form>
-             {%endfor%}
-        </ul>
-    </div>
-    <div class="question-box">
-        <div class="content">
-            <h2>Existential Question - 1</h2>
-            <div class='close'>
-                <h3>+</h3>
-            </div>
-            
-            {% for q in question %}
-                <h3>{{q.question}}</h3> 
-            {% endfor %}
-        </div>
-    </div>
-    <script src="../static/index.js"></script>
-</body>
-</html>
+<!--header-->
+<!--/header-->
+<!--work-->
+<div id="work" class="work">
+	<div class="container">
+		<div class="label-3"> </div>
+		<div class="label-4"> </div>
+		<h3><span class="left-icon"> </span>TO-DO<span class="right-icon"> </span><div class="clearfix"> </div></h3>
+		<p>Enter tasks and value their worth using Existential questions</p>
+		<div class="conatct-form">
+			<ul class="form">
+				<li>
+				<input type="text" class="text" value="Task" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Task';}" >
+				</li>
+				{% for todo in task %}
+				<li id="tasks"><i class="fa fa-trash" id="trash" aria-hidden="true"></i>  {{todo.todo}}</li>
+				 {%endfor%}
+				<div class="sub-button">
+					<input type="submit" value="SEND">
+				</div>
+			</ul>
+		</div>
+		<!--Portfolio-->
+	
+</div>
+	<link rel="stylesheet" href="css/swipebox.css">
+	<script src="js/jquery.swipebox.min.js"></script> 
+	    <script type="text/javascript">
+			jQuery(function($) {
+				$(".swipebox").swipebox();
+			});
+		</script>
+<!--/Portfolio-->
+	</div>
+</div>
+<!--/work-->
+<!--/about-->
+<!--contact-->
+
+{% endblock content %}
+

@@ -11,3 +11,12 @@ def index(request):
         task.save()
         question = Questions()
     return render(request, 'index.html', {'task': render_task, 'question':question_render})
+
+def about(request):
+    return render(request, 'about.html')
+
+def contact(request):
+    return render(request, 'contact.html')
+
+def login(request):
+    return render(request, 'login.html')    
