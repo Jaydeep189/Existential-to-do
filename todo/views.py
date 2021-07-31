@@ -4,6 +4,7 @@ from .forms import todo_enter
 # Create your views here.
 
 def index(request):
+    print(request.session)
     form = todo_enter()
     render_task = Tasks.objects.all()
     question_render = Questions.objects.all()
