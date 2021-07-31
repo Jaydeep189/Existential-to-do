@@ -4,12 +4,13 @@ from django import forms
 from django.utils.regex_helper import Choice
 from .models import Questions, Tasks , Answers
 from .forms import todo_enter , proc_form
+from django.contrib.auth.decorators import login_required
 # Create your views here.
-
+@login_required(login_url='/about')
 def index(request):
     print(request.session)
     form = todo_enter()
-    render_task = Tasks.objects.all()
+    render_task = Tasks.objects.filter(userid = request.user.id).order_by('-prio')
     question_render = Questions.objects.all()
     print(request.POST)
     if request.method == 'POST':
@@ -17,7 +18,7 @@ def index(request):
         try:                                 ## avoids error when their is no delete in post request
           if request.POST['delete'] != None:
              Tasks.objects.get(id=request.POST['delete']).delete()
-             render_task = Tasks.objects.all()
+             render_task = Tasks.objects.filter(userid = request.user.id).order_by('-prio')
         except Exception as e:
             print(e)
             pass
@@ -29,45 +30,38 @@ def index(request):
             
         
            
-        render_task = Tasks.objects.all()
+        render_task = Tasks.objects.filter(userid = request.user.id).order_by('-prio')
         #question = Questions()
     return render(request, 'index.html', {'task': render_task, 'question':question_render , 'form':form})
-
-
-
+@login_required(login_url='/about')
 def proc(request):
-    #form = proc()
+    
     ques = Questions.objects.all().values_list('id','question')
-    quesl = Questions.objects.all().values_list('question')
-    #ans = Answers.objects.all().values_list('question__id', 'answers')
     
     for z in ques:
         ans = Answers.objects.filter(question__id=z[0]).values_list('points', 'answers')
-        proc_form.base_fields[z[1]] = forms.MultipleChoiceField(choices=ans, widget=forms.RadioSelect)
-    
+        proc_form.base_fields[z[1]] = forms.ChoiceField(choices=ans, widget=forms.RadioSelect)
+
     form = proc_form()
-    print(ques,ans)
+    if request.method == 'POST':
+        print(request.POST)
+        form = proc_form(request.POST)
+        if form.is_valid():
+           sl = []
+           for z in ques:
+               sl.append(int(form.cleaned_data[z[1]]))
+           #print(sum(sl))
+           task = Tasks()
+           task.prio = sum(sl)
+           task.userid = request.user.id
+           task.todo = request.session['tasken']
+           task.save()
 
-
-    #class QuizForm(forms.Form):
-    #def __init__(self, data, questions, *args, **kwargs):
-    #    self.questions = questions
-    #    for question in questions:
-    #        field_name = "question_%d" % question.pk
-    #        choices = []
-    #        for answer in question.answer_set().all():
-    #            choices.append((answer.pk, answer.answer,))
-    #        ## May need to pass some initial data, etc:
-    #        field = forms.ChoiceField(label=question.question, required=True, 
-    #                                  choices=choices, widget=forms.RadioSelect)
-    #    return super(QuizForm, self).__init__(data, *args, **kwargs)
-
-
+           return redirect(index)
+    form = proc_form()
 
 
     return render(request, 'login.html' , {'form':form} )
-
-
 
 
 def about(request):

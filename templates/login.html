@@ -1,1 +1,11 @@
-{% extends 'base.html' %} {% load static %} {% block content %} {{form.as_table}} {% endblock content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+
+<form class='conatct-form' method="POST" enctype="multipart/form-data">
+    {{form.as_table}} {{form.errors}}
+    <div class="sub-button"> {% csrf_token %}
+        <input id="submit-main" type="submit" value="SEND">
+    </div>
+</form>
+
+{% endblock content %}
