@@ -86,8 +86,7 @@ def register_user(request):
            
 
             username = form.cleaned_data.get("username")
-            phone = form.cleaned_data.get("phone")
-            
+           
             
             email = form.cleaned_data.get("email")
             raw_password = form.cleaned_data.get("password1")
