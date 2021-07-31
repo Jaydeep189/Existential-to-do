@@ -7,10 +7,9 @@
 /*--
 custom css
 --*/
-#trash{
+#form-question{
+	display: none !important;
 }
-
-
 #tasks{
 	text-align: left;
 	font-size: large;

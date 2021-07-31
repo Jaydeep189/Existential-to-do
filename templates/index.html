@@ -8,45 +8,66 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+
 <body>
-<!--header-->
-<!--/header-->
-<!--work-->
-<div id="work" class="work">
-	<div class="container">
-		<div class="label-3"> </div>
-		<div class="label-4"> </div>
-		<h3><span class="left-icon"> </span>TO-DO<span class="right-icon"> </span><div class="clearfix"> </div></h3>
-		<p>Enter tasks and value their worth using Existential questions</p>
-		<div class="conatct-form">
-			<ul class="form">
-				<li>
-				<input type="text" class="text" value="Task" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Task';}" >
-				</li>
-				{% for todo in task %}
-				<li id="tasks"><i class="fa fa-trash" id="trash" aria-hidden="true"></i>  {{todo.todo}}</li>
-				 {%endfor%}
-				<div class="sub-button">
-					<input type="submit" value="SEND">
+	<!--header-->
+	<!--/header-->
+	<!--work-->
+	<div id="work" class="work">
+		<div class="container">
+			<div class="label-3"> </div>
+			<div class="label-4"> </div>
+			<h3><span class="left-icon"> </span>TO-DO<span class="right-icon"> </span>
+				<div class="clearfix"> </div>
+			</h3>
+			<p>Enter tasks and value their worth using Existential questions</p>
+			<form method="POST" action="/">
+				<div class="conatct-form">
+					<ul class="form">
+						{% csrf_token %}
+						<li>
+							<input type="text" class="text" name="task" placeholder="Task">
+							<button class="trigger" type="submit" href="#popup1"></button>
+						</li>
+
+						{% for todo in task %}
+						<li id="tasks"> <button id="trash_button" name="delete" type="submit"> <i class="fa fa-trash"
+									id="trash" aria-hidden="true"></i> </button> {{todo.todo}}</li>
+						{%endfor%}
+						<div class="sub-button">
+							<input type="submit" value="SEND">
+						</div>
+					</ul>
 				</div>
-			</ul>
+			</form>
+			<div >
+				<form id="form-question">
+					<p> Questions </p>
+					<button type="submit">submit</button>
+				
+				</form>
+			</div>
+			<!--Portfolio-->
+
 		</div>
-		<!--Portfolio-->
-	
-</div>
-	<link rel="stylesheet" href="css/swipebox.css">
-	<script src="js/jquery.swipebox.min.js"></script> 
-	    <script type="text/javascript">
-			jQuery(function($) {
+		<link rel="stylesheet" href="{% static 'css/swipebox.css'%}">
+		<script src="{% static 'js/jquery.swipebox.min.js'%}"></script>
+		<script src="{% static 'js/main.js'%}"></script>
+		<script type="text/javascript">
+			jQuery(function ($) {
 				$(".swipebox").swipebox();
 			});
+			var question_form = document.getElementsByClassName("trigger");
+
+			question_form.addEventListener("click", function Trigger(){
+    		document.body.style.element.display = "flex";
+			});
 		</script>
-<!--/Portfolio-->
+		<!--/Portfolio-->
 	</div>
-</div>
-<!--/work-->
-<!--/about-->
-<!--contact-->
+	</div>
+	<!--/work-->
+	<!--/about-->
+	<!--contact-->
 
-{% endblock content %}
-
+	{% endblock content %}
