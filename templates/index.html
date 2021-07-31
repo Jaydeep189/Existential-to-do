@@ -28,13 +28,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <!-- <input type="text" class="text" name="task" placeholder="Task">
                             <button class="trigger" type="submit" href="#popup1"></button>-->
                             <div class="sub-button">
-                                <input type="submit" value="SEND">
+                                <input id="submit-main" type="submit" value="SEND">
                             </div>
 
                         </li>
                     </ul>
             </form>
-
+ 
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %} {% for todo in task %}
                 <ul>
@@ -52,16 +52,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <link rel="stylesheet" href="{% static 'css/swipebox.css'%}">
         <script src="{% static 'js/jquery.swipebox.min.js'%}"></script>
         <script src="{% static 'js/main.js'%}"></script>
-        <script type="text/javascript">
-            jQuery(function($) {
-                $(".swipebox").swipebox();
-            });
-            var question_form = document.getElementsByClassName("trigger");
-
-            question_form.addEventListener("click", function Trigger() {
-                document.body.style.element.display = "flex";
-            });
-        </script>
         <!--/Portfolio-->
     </div>
     </div>

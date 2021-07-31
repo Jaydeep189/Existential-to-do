@@ -11,3 +11,10 @@ class Questions(models.Model):
     question = models.CharField(max_length=10000)
     def __str__(self):
         return self.question
+
+class Answers(models.Model):
+    answers = models.CharField(max_length=50)
+    points = models.IntegerField()
+    question = models.ForeignKey("Questions", on_delete=models.CASCADE)
+    def __str__(self):
+        return (self.answers + "  ||  " + str(self.points) + "  ||  "  +self.question.question)
