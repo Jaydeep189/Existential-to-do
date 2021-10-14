@@ -12,6 +12,7 @@ backcall==0.2.0
 bleach==3.3.0
 blessed==1.18.1
 Brotli==1.0.9
+bs4==0.0.1
 certifi==2020.12.5
 cffi==1.14.5
 chardet==4.0.0
@@ -111,8 +112,10 @@ typing-extensions==3.10.0.0
 Unipath==1.1
 urllib3==1.26.3
 uvicorn==0.14.0
-wcwidth==0.2.5s
+wcwidth==0.2.5
+weasyprint==53.2
 webencodings==0.5.1
 whitenoise==5.3.0
 widgetsnbextension==3.5.1
+xhtml2pdf==0.2.5
 zopfli==0.1.8
