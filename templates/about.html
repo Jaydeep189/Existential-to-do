@@ -1,35 +1,103 @@
-{% extends "base.html" %}
 {% load static %}
-{% block content %}
-<!--about-->
-<div id="about" class="about">
-	<div class="container">
-		<div class="label-5"> </div>
-		<div class="label-6"> </div>
-		<h3><span class="left-icon"> </span>ABOUT<span class="right-icon">  </span><div class="clearfix"> </div></h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-		<div class="about-info">
-			<div class="col-md-6 about-left">
-				<img src="{% static 'images/n.png' %}" class="img-responsive" alt=""/>
-			</div>
-			<div class="col-md-6 about-right">
-				<p>Existentialism a philosophical theory or approach which emphasizes the existence of the individual person as a free and responsible agent determining their own development through acts of the will.</p>
-					<div class="about-icons">
-						<a href="#"><span class="fb"> </span></a>
-						<a href="#"><span class="tw"> </span></a>
-						<a href="#"><span class="pin"> </span></a>	
-						<a href="#"><span class="likdin"> </span></a>	
-						<a href="#"><span class="dribble"> </span></a>	 
-						<a href="#"><span class="be"> </span></a>
-					 </div>
-			</div>
-			 <div class="clearfix"> </div>
-		</div>
-	</div>
-</div>
+<!DOCTYPE html>
+<html class="no-js" lang="">
+    <head>
+        <!-- meta charset -->
+        <meta charset="utf-8">
+        <!-- site title -->
+        <title>Phantom | Personal Resume Template</title>
+        <!-- meta description -->
+        <meta name="description" content="">
+        <!-- mobile viwport meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- fevicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+        
+        <!-- ================================
+        CSS Files
+        ================================= -->
+        <link href="{% static 'https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Open+Sans:400,600,700,800' %}" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/themefisher-fonts.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'css/dark.css' %}">
+        <link id="color-changer" rel="stylesheet" href="{% static 'css/colors/red.css' %}">
+    </head>
 
+    <body class="dark">
 
-{% endblock content %}
+      <!--  <div class="preloader">
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+        </div> -->
+         
 
+        <main class="site-wrapper">
+            <div class="pt-table">
+                <div class="pt-tablecell page-about relative">
+                    <!-- .close -->
+                    <a href="./" class="page-close"><i class="tf-ion-close"></i></a>
+                    <!-- /.close -->
 
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                                <div class="page-title text-center">
+                                    <h2>About <span class="primary">Us</span> <span class="title-bg">AboutUs</span></h2>
+<p>Existentialism a philosophical theory or approach which emphasizes the existence of the individual person as a free and responsible agent determining their own development through acts of the will.</p>
+                                </div>
+                            </div>
 
+                            <div class="col-xs-12 col-md-12">
+                                <div class="about-author">
+                                    <figure class="author-thumb">
+                                        <img src="http://www.stageandcinema.com/wp-content/uploads/2011/04/Existentialism.jpg" alt="">
+                                    </figure> <!-- /.author-bio -->
+                                    <div class="author-desc">
+                                        
+                                        <p><b>Name:</b> Existentialism</p>
+                                        <p><b>Date of birth:</b> 19th century</p>
+                                        <p><b>Creator:</b> Søren Kierkegaard </p>
+                                        <p><b>Creative minds :</b><a href="https://jaydeepsharma.co" target="_blank"> Jaydeep Sharma</a> , <a href="https://meetchaudhari.com" target="_blank">Meet Chaudhari</a></p>
+                                    </div>
+                                    <!-- /.author-desc -->
+                                </div> <!-- /.about-author -->
+                            <p>We aim at spreading unique and interesting ideas throughout the world. With the help of technology, create useful tools that are interconnected to various concepts and theories.</p>
+                            </div> <!-- /.col --> <!-- /.col -->
+                        </div> <!-- /.row -->
+                    </div> <!-- /.container -->
+
+                    <nav class="page-nav clear">
+                        <div class="container">
+                            <div class="flex flex-middle space-between">
+                                <span class="prev-page"><a href="#" class="link"></a></span>
+                                     <span class="copyright hidden-xs">Created by <a href="https://jaydeepsharma.co" target="_blank">Jaydeep Sharma</a> and <a href="https://meetchaudhari.com" target="_blank">Meet Chaudhari</a></span>
+                           
+                                <span class="next-page"><a href="#" class="link"></a></span>
+                            </div>
+                        </div>
+                        <!-- /.page-nav -->
+                    </nav>
+                    <!-- /.container -->
+                </div> <!-- /.pt-tablecell -->
+            </div> <!-- /.pt-table -->
+        </main> <!-- /.site-wrapper -->
+        
+        <!-- ================================
+        JavaScript Libraries
+        ================================= -->
+       <script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
+        <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+        <!-- <script src="js/jquery.easing.min.js"></script> -->
+        <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+        <script src="{% static 'js/jquery.nicescroll.min.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/jquery-validation.min.js' %}"></script>
+        <script src="{% static 'js/form.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>
+</html>

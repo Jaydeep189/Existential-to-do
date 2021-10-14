@@ -6,7 +6,7 @@ from .models import Questions, Tasks , Answers
 from .forms import todo_enter , proc_form
 from django.contrib.auth.decorators import login_required
 # Create your views here.
-@login_required(login_url='/about')
+@login_required(login_url='/login')
 def index(request):
     print(request.session)
     form = todo_enter()
@@ -33,7 +33,7 @@ def index(request):
         render_task = Tasks.objects.filter(userid = request.user.id).order_by('-prio')
         #question = Questions()
     return render(request, 'index.html', {'task': render_task, 'question':question_render , 'form':form})
-@login_required(login_url='/about')
+@login_required(login_url='/home')
 def proc(request):
     
     ques = Questions.objects.all().values_list('id','question')
@@ -61,7 +61,7 @@ def proc(request):
     form = proc_form()
 
 
-    return render(request, 'login.html' , {'form':form} )
+    return render(request, 'questions.html' , {'form':form} )
 
 
 def about(request):
@@ -71,4 +71,7 @@ def contact(request):
     return render(request, 'contact.html')
 
 def login(request):
-    return render(request, 'login.html')    
+    return render(request, 'login.html')   
+
+def home(request):
+    return render(request, 'home.html')

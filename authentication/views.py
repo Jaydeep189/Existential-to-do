@@ -18,6 +18,7 @@ from django.db.models.query_utils import Q
 from django.utils.http import urlsafe_base64_encode
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
+from django.contrib.auth import logout
 
 
 
@@ -65,7 +66,7 @@ def login_view(request):
             if user is not None:
                 #print("valid")
                 login(request, user)
-                return redirect("/")
+                return redirect("/todo")
             else:    
                 msg = 'Invalid credentials'    
         else:
@@ -106,3 +107,8 @@ def register_user(request):
         form = SignUpForm()
 
     return render(request, "accounts/register.html", {"form": form, "msg" : msg, "success" : success })
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('/')
