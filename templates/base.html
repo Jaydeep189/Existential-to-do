@@ -1,119 +1,86 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="">
+    <head>
+        <!-- meta charset -->
+        <meta charset="utf-8">
+        <!-- site title -->
+        <title>Existential to-do</title>
+        <!-- meta description -->
+        <meta name="description" content="">
+        <!-- mobile viwport meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- fevicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+        
+        <!-- ================================
+        CSS Files
+        ================================= -->
+        <link href="{% static 'https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Open+Sans:400,600,700,800' %}" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/themefisher-fonts.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'css/dark.css' %}">
+        <link id="color-changer" rel="stylesheet" href="{% static 'css/colors/red.css' %}">
+    </head>
 
-<head>
-	<title>Existential To-Do List</title>
-	<link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
-	<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="Emrah_Demirag Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-	<script type="application/x-javascript">
-		addEventListener("load", function () {
-			setTimeout(hideURLbar, 0);
-		}, false);
+    <body class="dark">
 
-		function hideURLbar() {
-			window.scrollTo(0, 1);
-		}
-	</script>
-	<script src="{% static 'js/jquery.min.js' %}"> </script>
-	<!--web_fonts-->
-	<link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,700italic,400,700' rel='stylesheet'
-		type='text/css'>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-		integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-		crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<!--/web_fonts-->
-	<!--start-smoth-scrolling-->
-	<script type="text/javascript">
-		jQuery(document).ready(function ($) {
-			$(".scroll").click(function (event) {
-				event.preventDefault();
-				$('html,body').animate({
-					scrollTop: $(this.hash).offset().top
-				}, 900);
-			});
-		});
-	</script>
-	<!--start-smoth-scrolling-->
-</head>
-<div id="home" class="banner">
-	<div class="container">
-		<div class="label-1"> </div>
-		<div class="top-menu">
-		<span class="menu"> </span> 
-			<ul class="nav">
-					<li><a class="scroll" href="/">HOME</a></li>
-					<li><a class="scroll" href="/about">ABOUT</a></li>
-					<li><a class="scroll" href="/login">LOGIN</a></li>
-					<li><a class="scroll" href="/contact">CONTACT</a></li>
-				</ul>
-				<div class="logo">
-					<a href="#"><img src="{% static 'images/logo.png' %}" /></a>
-				</div>
-				<div class="clearfix"> </div>
-	</div>	
-			 <!-- script-for-menu -->
-		 <script>
-				$("span.menu").click(function(){
-					$(".top-menu ul").slideToggle("slow" , function(){
-					});
-				});
-		 </script>
-		 <!-- script-for-menu -->	
-			<div id="banner-top" class="banner-top">		  		  
-				<h1><span class="left-icon"> </span>EXISTENTIAL <span class="right-icon"> </span><div class="clearfix"> </div></h1>
-				<h2><span class="left-icon"> </span>TO-DO LIST<span class="right-icon"> </span><div class="clearfix"> </div></h2>
-			</div>
-		<div class="header-icons">
-			<a href="#"><span class="fb"> </span></a>
-			<a href="#"><span class="tw"> </span></a>
-			<a href="#"><span class="pin"> </span></a>	
-			<a href="#"><span class="likdin"> </span></a>	
-			<a href="#"><span class="dribble"> </span></a>	 
-			<a href="#"><span class="be"> </span></a>
-		 </div>
-</div>
-</div>
-{% block content %}
+       <!-- <div class="preloader">
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+        </div> -->
+        
 
-{% endblock content %}
-<div class="container">
-<div id="contact" class="contact">
-	{% block contact %}
-	{% endblock contact %}
-	<div class="copyrights">
-		<p>Copyrights &copy; 2021 Existential All rights reserved | Created by <a target="_blank"
-				rel="noopener noreferrer" href="http://jaydeepsharma.co">Jaydeep Sharma</a></p>
-	</div>
-	<script type="text/javascript">
-		$(document).ready(function () {
-			/*
-										var defaults = {
-								  			containerID: 'toTop', // fading element id
-											containerHoverID: 'toTopHover', // fading element hover id
-											scrollSpeed: 1200,
-											easingType: 'linear' 
-								 		};
-										*/
+        <main class="site-wrapper">
+            <div class="pt-table">
+                <div class="pt-tablecell page-about relative">
+                    <!-- .close -->
+                    <a href="./" class="page-close"><i class="tf-ion-close"></i></a>
+                    <!-- /.close -->
 
-			$().UItoTop({
-				easingType: 'easeOutQuart'
-			});
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                                <div class="page-title text-center">
+                                    <h2>Reset <span class="primary">Password</span> <span class="title-bg">Reset</span></h2>
+                                </div>
+                            </div>
+							{% block content %}{% endblock content %}
+                        </div> <!-- /.row -->
+                    </div> <!-- /.container -->
 
-		});
-	</script>
-	<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;">
-		</span></a>
-</div>
-</div>
-<!--/contact-->
-<!--copy-rights-->
-<!--copy-rights-->
-</body>
-
+                    <nav class="page-nav clear">
+                        <div class="container">
+                            <div class="flex flex-middle space-between">
+                                <span class="prev-page"><a href="#" class="link"></a></span>
+                                     <span class="copyright hidden-xs">Created by <a href="https://jaydeepsharma.co" target="_blank">Jaydeep Sharma</a> and <a href="https://meetchaudhari.com" target="_blank">Meet Chaudhari</a></span>
+                           
+                                <span class="next-page"><a href="#" class="link"></a></span>
+                            </div>
+                        </div>
+                        <!-- /.page-nav -->
+                    </nav>
+                    <!-- /.container -->
+                </div> <!-- /.pt-tablecell -->
+            </div> <!-- /.pt-table -->
+        </main> <!-- /.site-wrapper -->
+        
+        <!-- ================================
+        JavaScript Libraries
+        ================================= -->
+       <script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
+        <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+        <!-- <script src="js/jquery.easing.min.js"></script> -->
+        <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+        <script src="{% static 'js/jquery.nicescroll.min.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/jquery-validation.min.js' %}"></script>
+        <script src="{% static 'js/form.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>
 </html>
