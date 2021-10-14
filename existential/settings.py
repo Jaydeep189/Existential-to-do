@@ -1,4 +1,5 @@
 from pathlib import Path, os
+import django_heroku
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -105,3 +106,6 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+django_heroku.settings(locals())
