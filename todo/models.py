@@ -1,10 +1,11 @@
 from datetime import date
 from django.db import models
 from django.db.models.base import Model
+from authentication.models import User
 
-# Create your models here.
+
 class Tasks(models.Model):
-    userid = models.CharField(max_length=20)
+    userid = models.ForeignKey(User, on_delete=models.CASCADE)
     todo = models.CharField(max_length=100)
     prio = models.IntegerField()
     dategenrate = models.DateTimeField(auto_now_add=True)
