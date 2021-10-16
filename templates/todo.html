@@ -26,6 +26,17 @@
         <link id="color-changer" rel="stylesheet" href="{% static 'css/colors/color-0.css' %}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link id="color-changer" rel="stylesheet" href="css/colors/color-0.css">
+    <style>
+      .text-input{
+           font-size: 25px;
+           font-family: sans-serif;
+           font-style: bold;
+           color: white;
+           border-radius: 10px;
+           border: 2px solid #FA6862;
+           background-color: #1e2530;;
+       }
+    </style>
     </head>
 
     <body class="dark">
@@ -43,7 +54,7 @@
             <div class="pt-table">
                 <div class="pt-tablecell page-contact relative">
                 
-            <button class="btn btn-primary my-4" style="position:absolute; top:30px; left:50px"><a href="logout/"> logout <a></button>
+            <button class="btn btn-primary my-4 logout" style="position:absolute; top:30px; left:50px"><a href="logout/"> logout <a></button>
                     <!-- .close -->
                     <a href="./" class="page-close"><i class="tf-ion-close"></i></a>
                     <!-- /.close -->
@@ -67,10 +78,9 @@
 
                                 <form enctype="multipart/form-data" id="contact-form" class="row contact-form no-gutter" action="#" method="post">
                                     {% csrf_token %}
-                                    <div class="col-xs-12 col-sm-12" style="font-size:25px;">
+                                    <div class="col-xs-12 col-sm-10">
                                         <div class="input-field name">
-                                            <span id="name" ><i style="font-size:20px;" class="fas fa-sm fa-tasks"></i></span>
-                                           {{form.todo}}
+                                                 {{ form.todo }}
                                         </div>
                                     </div> <!-- ./col- -->
                                     <div class="col-xs-12 col-sm-12 ">
@@ -84,19 +94,33 @@
                                 <div style="padding-left: 0;" class="col-xs-12 col-sm-12">
                                     <form method="POST" enctype="multipart/form-data">
                                      {% csrf_token %}
-                                        <ul class="list-group">
+                                        <ul style="list-style: none;" class="list-group">
                                         {% for todo in task %}
-                                            <li class="dark section-title list-group-item" style="font-family: Open Sans, sans-serif; text-transform: uppercase;"> {{todo.todo}} <button style="float: right; background:black; " id="trash_button" name="delete" value={{todo.id}} type="submit"><i  class="far fa-trash-alt"></i> </li>
+                                            <li class="dark section-title list-group-item" style=" font-family: Open Sans, sans-serif; text-transform: uppercase;"> ({{ forloop.counter }}) &nbsp; {{todo.todo}} <button  style="float: right; background:black; " id="trash_button" name="delete" value={{todo.id}} type="submit"><i  class="far fa-trash-alt"></i> </li>
                                           </ul>
                                           {%endfor%}
                                            </form>
                                     </div>
                                        </div> <!-- /.row -->
                             </div> <!-- /.col- -->
+                            <nav style="margin-top:20px;"  class="page-nav clear">
+                                <div class="container">
+                                    <div class="flex flex-middle space-between">
+                                        <span class="prev-page"><a href="#" class="link"></a></span>
+                                             <span  class="copyright hidden-xs">Created by <a href="https://jaydeepsharma.co" target="_blank">Jaydeep Sharma</a> and <a href="https://meetchaudhari.com" target="_blank">Meet Chaudhari</a></span>
+                                   
+                                        <span class="next-page"><a href="#" class="link"></a></span>
+                                    </div>
+                                </div>
+                                <!-- /.page-nav -->
+                            </nav>
                         </div>  <!-- /.row -->
+                     
                     </div> <!-- /.container -->
-                    <!-- /.container -->
 
+                   
+                    <!-- /.container -->
+                  
                 </div> <!-- /.pt-tablecell -->
             </div> <!-- /.pt-table -->
         </main> <!-- /.site-wrapper -->
