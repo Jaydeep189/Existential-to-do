@@ -1,6 +1,6 @@
 from pathlib import Path, os
 import django_heroku
-
+import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-!br(9yz86spnh%qov9bq7h62*_*9*%078dihkm+=frmf^(xs)+'
