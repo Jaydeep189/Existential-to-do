@@ -9,7 +9,7 @@ SECRET_KEY = 'django-insecure-!br(9yz86spnh%qov9bq7h62*_*9*%078dihkm+=frmf^(xs)+
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['existential.herokuapp.com']
+ALLOWED_HOSTS = ['existential.herokuapp.com', 'existential-to-do.onrender.com', 'existential.jaydeepsharma.me']
 
 
 # Application definition
@@ -136,6 +136,8 @@ AUTH_USER_MODEL = 'authentication.User'
 
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
